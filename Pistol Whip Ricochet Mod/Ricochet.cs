@@ -9,6 +9,12 @@ namespace Pistol_Whip_Ricochet_Mod
     {
 
         static Gun gun;
+        public override void OnApplicationStart()
+        {
+            base.OnApplicationStart();
+            MelonPrefs.RegisterCategory("Pistol_Whip_Ricochet_Mod", "Ricochet Prefs");
+            MelonPrefs.RegisterBool("Pistol_Whip_Ricochet_Mod", "disableRicochet", false);
+        }
 
         [HarmonyPatch(typeof(Gun), "Fire", new Type[0])]
         public static class gunricEnd
@@ -30,14 +36,14 @@ namespace Pistol_Whip_Ricochet_Mod
             // reset angle
             public static Quaternion initialAngle;
 
-            public static bool isBounceShot = false;
+            public static bool disableRicochet = MelonPrefs.GetBool("Pistol_Whip_Ricochet_Mod", "disableRicochet");
 
             static bool patchPost = true;
 
             private static void Prefix(Bullet __instance)
             {
 
-                if (isBounceShot == false)
+                if (disableRicochet == false)
                 {
                     // create a raycasthit 
                     RaycastHit hit;
@@ -57,9 +63,9 @@ namespace Pistol_Whip_Ricochet_Mod
 
                             gun.BulletCount++;
 
-                            isBounceShot = true;
+                            disableRicochet = true;    //don't ricochet off of the bounced shot
                             gun.Fire();  //technically the ricochet happens before the original bullet
-                            isBounceShot = false;
+                            disableRicochet = false;
                             patchPost = true;
                         
                     }
@@ -72,11 +78,11 @@ namespace Pistol_Whip_Ricochet_Mod
 
             private static void Postfix()
             {
-                if (!isBounceShot && patchPost)
+                if (!disableRicochet && patchPost)
                 {
                     gun.attachPoint.position = initialPoint; // set reset point
                     gun.attachPoint.localRotation = initialAngle; // set reset rotation
-                    isBounceShot = false;
+                    disableRicochet = false;
                 }
             }
         }

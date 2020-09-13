@@ -35,8 +35,8 @@ using Pistol_Whip_Ricochet_Mod;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.1.1.0")]
+[assembly: AssemblyFileVersion("1.1.1.0")]
 
-[assembly: MelonModInfo(typeof(Ricochet), "Pistol Whip Ricochet Mod", "1.1.0", "Givo/Geb")]
+[assembly: MelonModInfo(typeof(Ricochet), "Pistol Whip Ricochet Mod", "1.1.1", "Givo/Geb")]
 [assembly: MelonModGame(null, null)]
