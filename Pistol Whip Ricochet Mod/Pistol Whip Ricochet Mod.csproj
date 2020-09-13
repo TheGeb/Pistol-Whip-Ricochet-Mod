@@ -7,8 +7,8 @@
     <ProjectGuid>{5F51E641-F4C6-41A1-AA5D-5E519C07A132}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pistol_Whip_Gun_Mods</RootNamespace>
-    <AssemblyName>Pistol Whip Gun Mods</AssemblyName>
+    <RootNamespace>Pistol_Whip_Ricochet_Mod</RootNamespace>
+    <AssemblyName>Pistol Whip Ricochet Mod</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -88,4 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "G:\Program Files (x86)\Steam\steamapps\common\Pistol Whip\Mods\$(TargetFileName)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

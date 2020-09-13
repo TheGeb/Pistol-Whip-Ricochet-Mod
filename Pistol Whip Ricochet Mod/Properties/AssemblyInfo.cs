@@ -8,11 +8,11 @@ using Pistol_Whip_Ricochet_Mod;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Pistol Whip Gun Mods")]
+[assembly: AssemblyTitle("Pistol Whip Ricochet Mod")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Pistol Whip Gun Mods")]
+[assembly: AssemblyProduct("Pistol Whip Ricochet Mod")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -38,5 +38,5 @@ using Pistol_Whip_Ricochet_Mod;
 [assembly: AssemblyVersion("1.1.0.0")]
 [assembly: AssemblyFileVersion("1.1.0.0")]
 
-[assembly: MelonModInfo(typeof(Ricochet), "Pistol Whip Gun Mods", "1.1.0", "Givo/Geb")]
+[assembly: MelonModInfo(typeof(Ricochet), "Pistol Whip Ricochet Mod", "1.1.0", "Givo/Geb")]
 [assembly: MelonModGame(null, null)]
